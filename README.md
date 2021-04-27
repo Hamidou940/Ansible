@@ -2,10 +2,13 @@
 
 Hamidou MARY
 
+<<<<<<< HEAD
 # Ansible
 
 Hamidou MARY
 
+=======
+>>>>>>> e8d5a00e27708d9665ef1d3889c1907f69c1d3d3
 Cours Ansible
 
 
@@ -103,4 +106,7 @@ b.	Laisser les informations par défaut
 a.	ssh-copy-id -f -i /root/.ssh/id_rsa.pub root@host1
 b.	ssh-copy-id -f -i /root/.ssh/id_rsa.pub root@host2
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e8d5a00e27708d9665ef1d3889c1907f69c1d3d3
