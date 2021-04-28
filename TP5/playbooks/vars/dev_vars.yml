@@ -1,0 +1,5 @@
+--- 
+vim_state: "absent"
+user_state: "present"
+username3: "user3"
+username1: "Hamidou"
