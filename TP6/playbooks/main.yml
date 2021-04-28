@@ -6,7 +6,7 @@
           - "vars/{{env}}_secret.yml"
 
   roles:
-          - { role: create_user }
-          - { role: vim_install }
+          #          - { role: create_user }
+          # - { role: vim_install }
           - { role: apache_install }
 
