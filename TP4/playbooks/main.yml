@@ -1,0 +1,18 @@
+---
+- hosts: webserver
+  remote_user: root
+  vars_files:
+          - "vars/{{env}}_vars.yml"
+          - "vars/{{env}}_secret.yml"
+  tasks:
+          - name: debug
+            debug:
+                    msg: "bonjour ici l'environnement {{env}}"
+
+          - name: "création user"
+            user:
+                    name: hamidou
+                    password: "{{password}}"
+                    state: present
+
+
