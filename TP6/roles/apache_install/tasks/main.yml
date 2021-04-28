@@ -1,0 +1,10 @@
+--- 
+- name: "Installer serveur apache"
+  apt:
+          name: apache2
+
+- name: "Lancer le service"
+  service: name=apache2 state=started
+
+- name: "Verifier que le service est démarré"
+  command: apache2ctl status  
