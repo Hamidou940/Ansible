@@ -2,4 +2,4 @@
 host_db
 
 [all:vars]
-env="db_service"
+env="int"
