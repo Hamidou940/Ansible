@@ -1,0 +1,23 @@
+---
+- name: debug
+  debug:
+          msg: "bonjour ici l'environnement {{env}}"
+
+- name: "création user"
+  when: ansible_distribution == "Ubuntu"
+  user:
+          name: "{{ item.name }}"
+          password: "{{ item.password }}"
+          state: present
+  loop: 
+     - name: "{{username1}}"
+       password: "{{password}}"
+     - name: user1bis
+       password: pwd_user1bis
+     - name: "{{username3}}"
+       password: "{{password3}}"
+  register: recap
+
+- name: recap
+  debug: 
+         msg: "{{recap}}"
