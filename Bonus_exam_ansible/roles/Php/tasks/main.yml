@@ -1,0 +1,19 @@
+---
+- name: "Installer PHP 7"
+  apt:
+          name: php
+          state: latest
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "18.04"
+
+- name: "Version PHP"
+  shell: php -v
+  register: result
+
+- name: "Affichage version PHP"
+  set_fact:
+         apache_version: "{{ result.stdout }}"
+
+- name: "Copier le fichier index.html dans le conteneur"
+  copy:
+          src: 'files/index.html.j2'
+          dest: '/var/www/index.html'

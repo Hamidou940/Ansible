@@ -2,8 +2,15 @@
 - name: "Installer serveur apache"
   apt:
           name: apache2
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "18.05"
-  
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "18.04"
+
+- name: "Version apache"
+  shell: apache2 -v|grep version|awk '{print $3}'|cut -f2 -d'/'
+  register: result
+ 
+- name: "Affichage version Apache2"
+  set_fact:
+         apache_version: "{{ result.stdout }}"
 
 - name: "Copier le template de conf apache dans le conteneur"
   template:

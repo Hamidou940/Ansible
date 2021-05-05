@@ -1,0 +1,6 @@
+---
+- name: Restart Apache
+  service:
+          name: apache2
+          state: restarted
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "18.04"
