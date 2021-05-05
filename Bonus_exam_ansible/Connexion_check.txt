@@ -1,0 +1,8 @@
+host_db | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+host_web | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}

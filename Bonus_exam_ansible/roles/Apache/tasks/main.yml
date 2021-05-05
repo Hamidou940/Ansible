@@ -1,0 +1,19 @@
+---
+- name: "Installer serveur apache"
+  apt:
+          name: apache2
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "18.05"
+  
+
+- name: "Copier le template de conf apache dans le conteneur"
+  template:
+          src: 'templates/apache2.conf.j2'
+          dest: '/etc/apache2/apache.conf'
+  notify:
+          - Restart Apache
+
+- name: "Démarrer apache si ce n'est pas fait"
+  service:
+          name: apache2
+          state: started
+
